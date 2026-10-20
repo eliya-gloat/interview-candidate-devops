@@ -1,0 +1,10 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+# cluster name comes from bootstrap.sh --name (CLUSTER_NAME)
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      # careers-web NodePort -> http://localhost:8080/health on the host
+      - containerPort: 30080
+        hostPort: 8080
+        protocol: TCP

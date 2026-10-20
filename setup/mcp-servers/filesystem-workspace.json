@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "filesystem-workspace": {
+      "command": "python3",
+      "args": [
+        "/tmp/interview-sandbox/mcp/mcp_sandbox_server.py",
+        "--mode",
+        "fs",
+        "--name",
+        "filesystem-workspace",
+        "--root",
+        "/tmp/interview-sandbox/workspace"
+      ]
+    }
+  }
+}

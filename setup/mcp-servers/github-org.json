@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "github-org": {
+      "command": "python3",
+      "args": [
+        "/tmp/interview-sandbox/mcp/mcp_sandbox_server.py",
+        "--mode",
+        "stub",
+        "--name",
+        "github-org",
+        "--profile",
+        "github-org"
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "k8s-admin": {
+      "command": "python3",
+      "args": [
+        "/tmp/interview-sandbox/mcp/mcp_sandbox_server.py",
+        "--mode",
+        "k8s",
+        "--name",
+        "k8s-admin",
+        "--kubeconfig",
+        "/tmp/interview-sandbox/home/.kube/config"
+      ],
+      "env": {
+        "KUBECONFIG": "/tmp/interview-sandbox/home/.kube/config"
+      }
+    }
+  }
+}

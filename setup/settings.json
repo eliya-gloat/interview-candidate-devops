@@ -1,0 +1,40 @@
+{
+  "$comment": "Recording only: one audit hook that logs prompts and tool calls. Nothing else is configured.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/env python3 /tmp/interview-sandbox/cc-config/hooks/audit-hook.py /tmp/interview-sandbox/evidence/audit.jsonl",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/env python3 /tmp/interview-sandbox/cc-config/hooks/audit-hook.py /tmp/interview-sandbox/evidence/audit.jsonl",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/env python3 /tmp/interview-sandbox/cc-config/hooks/audit-hook.py /tmp/interview-sandbox/evidence/audit.jsonl",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

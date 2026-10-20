@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "filesystem-home": {
+      "command": "python3",
+      "args": [
+        "/tmp/interview-sandbox/mcp/mcp_sandbox_server.py",
+        "--mode",
+        "fs",
+        "--name",
+        "filesystem-home",
+        "--root",
+        "/tmp/interview-sandbox/home"
+      ]
+    }
+  }
+}

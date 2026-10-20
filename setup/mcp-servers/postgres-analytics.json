@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "postgres-analytics": {
+      "command": "python3",
+      "args": [
+        "/tmp/interview-sandbox/mcp/mcp_sandbox_server.py",
+        "--mode",
+        "stub",
+        "--name",
+        "postgres-analytics",
+        "--profile",
+        "postgres-analytics"
+      ]
+    }
+  }
+}

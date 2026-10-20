@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "k8s-readonly": {
+      "command": "python3",
+      "args": [
+        "/tmp/interview-sandbox/mcp/mcp_sandbox_server.py",
+        "--mode",
+        "k8s",
+        "--name",
+        "k8s-readonly",
+        "--readonly",
+        "--kubeconfig",
+        "/tmp/interview-sandbox/home/.kube/config"
+      ],
+      "env": {
+        "KUBECONFIG": "/tmp/interview-sandbox/home/.kube/config"
+      }
+    }
+  }
+}
