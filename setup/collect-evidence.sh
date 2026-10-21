@@ -91,8 +91,11 @@ for repo in "$WORKSPACE_ROOT"/*/; do
   git -C "$repo" diff > "$STAGE/$r-git-diff-unstaged.txt" 2>&1 || true
   git -C "$repo" diff --cached > "$STAGE/$r-git-diff-staged.txt" 2>&1 || true
   git -C "$repo" status --porcelain --ignored > "$STAGE/$r-git-status.txt" 2>&1 || true
-  git -C "$repo" bundle create "$STAGE/$r.bundle" --all >/dev/null 2>&1 || true
 done
+# A copy of the workspace, uncommitted work included, so the review can run on another machine.
+mkdir -p "$STAGE/workspace"
+tar -C "$WORKSPACE_ROOT" -cf - --exclude='charts/*/charts' --exclude='apps/*/charts' --exclude='Chart.lock' . \
+  | tar -C "$STAGE/workspace" -xf - || true
 
 # 5. cluster state, including the live probes (shows a half-landed fix)
 {
